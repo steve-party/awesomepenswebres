@@ -136,7 +136,9 @@ div.ml-slider-3-12-1{
 
 }*/
 
-
+li.product{
+min-width: 400px;
+}
 
 .site-footer{
 	padding-left:2%;
