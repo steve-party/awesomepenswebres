@@ -10,6 +10,34 @@
 
 }
 
+#secondary{
+width:250px;
+  margin-right:5px;
+}
+
+li.product.product-category{
+  height:350px;
+}
+ul.products li.product.type-product h2.woocommerce-loop-product__title{
+font-size: 0.9em;
+  text-align: left;
+}
+li.product.type-product{
+	height:350px; /* grid product heigh need to be fixed so that the float: left will not be blocked by some long product blocks*/
+  width: 170px !important;
+  margin-right: 15px !important;
+  display: inline-block !important;
+  float: left !important;
+  /*border: 1px solid;*/
+}
+ul.products li.product.type-product.last{
+  margin-right: 15px !important;
+}
+/*grid product layout stop first product of the column from taking a new line*/
+ul.products li.product.type-product.first{
+	clear: none !important;
+}
+
 /* temperary used for seperating subcategories and products. later withdrawn.
 .category-separator {display: block;
 width:100%;
@@ -53,10 +81,10 @@ margin-bottom: 2.992em;
 /**Meta slider plugin */
 .site-branding {
 
-	padding-left:50px;
+	padding-left:10px;
 	position:relative;
 	bottom:10px;
-	left:30px
+	left:10px
 }
 .content-area{
 	margin-bottom:0px;
@@ -136,9 +164,6 @@ div.ml-slider-3-12-1{
 
 }*/
 
-li.product{
-min-width: 400px;
-}
 
 .site-footer{
 	padding-left:2%;
@@ -281,13 +306,14 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 	margin-left:50px
 
 }
-/* Mobile Menue
- *
-*/
-.mob-menu-header-holder {
-	margin-top:35px;
+
+li.product.type-product{
+margin-bottom:1em !important;
 }
 
+a.button.product_type_grouped{
+display:none;
+}
 /*
  * malinky Load More button
  */
@@ -314,26 +340,60 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 
 
 /*without powerback end*/
-/*@media (min-width: 768px){
-	.page-template-template-fullwidth-php .site-main ul.products.columns-6 li.product{
+@media (min-width: 768px){
+	/*.page-template-template-fullwidth-php .site-main ul.products.columns-6 li.product{
 			width:16.15%;
 	margin-right:0.5%;
+	}*/
+  .archive #primary{
+	width: 85%;
 	}
-}*/
+
+}
+
+@media (max-width: 1800px){
+   .archive #primary{
+	width: 80%;
+	}
+
+}
+@media (max-width: 1300px){
+  .archive #primary{
+	width: 75%;
+	}
+}
+@media (max-width: 1050px){
+  .archive #primary{
+	width: 70%;
+	}
+}
+@media (max-width: 870px){
+  .archive #primary{
+	width: 65%;
+	}
+}
+@media (max-width: 760px){
+  .archive #primary{
+	width: 100%;
+	}
+  #secondary{
+  	width:100%
+  }
+}
 @media (min-width: 2000px){
 		.site-header {
-		max-width:85%;
+
 		margin-left:auto;
 		margin-right:auto;
 	}
 
 	.site-footer {
-		max-width:85%;
+
 		margin-left:auto;
 		margin-right:auto;
 	}
 	.col-full{
-			max-width:85%;
+			max-width:95%;
 	}
 
 }
@@ -448,7 +508,7 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 	.dgwt-wcas-search-wrapp{
 		height:50px;
 	}
-	.storefront-full-width-content .site-main ul.products.columns-6 li.product {
+	.storefront-full-width-content .site-main li.product {
 		width:100%;
 
 		border-bottom-width:thin;
@@ -461,13 +521,31 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 		ul.products li.product .woocommerce-loop-product__title, ul.products li.product h2{
 		font-size:1em;
 	}
+  /*smaller size of product title when screen size is small*/
+  h1.product_title.entry-title{
+  font-size: 1.5em;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-		/*
-	div.alignnormal{
 
-	margin-bottom:-110px;
-}
-	*/
+  /*adjust the group product option table layout when screen size
+  becomes very small
+  */
+
+/*to show the group option thumbnail when screen size becomes small*/
+  .group_table td.label {
+  padding:0;
+  }
+  /*other realted adjustment for group product option table*/
+  table.group_table td {
+  padding-left: 2px;
+    padding-right: 2px;
+  }
+  .group_table td.woocommerce-grouped-product-list-item__quantity{
+	max-width: 50px;
+  }
+  td.woocommerce-grouped-product-list-item__quantity input.input-text.qty.text{
+  max-width: 46px;
+  }
 }
