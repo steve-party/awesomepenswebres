@@ -2,11 +2,15 @@
   max-width:100%;
 	padding-left:0;
 	padding-right:0;
-
 }
+
 .site-header {
 	opacity: 0.95;
 	margin-bottom:5px;
+  /*own sticky header css, search for "sticky" if want to restore to use stick header plugin*/
+    position: fixed;
+  	top: 0;
+  	width: 100%
 
 }
 
@@ -15,6 +19,7 @@ width:250px;
   margin-right:5px;
 }
 
+
 li.product.product-category{
   height:350px;
 }
@@ -22,22 +27,85 @@ ul.products li.product.type-product h2.woocommerce-loop-product__title{
 font-size: 0.9em;
   text-align: left;
 }
-li.product.type-product{
+
+ul.products li.product.product-category{
+
+  height: 250px !important;
+  width: 170px !important;
+  margin-right: 15px !important;
+    display: inline-block !important;
+  float: left !important;
+}
+
+ul.products li.product.type-product{
 	height:350px; /* grid product heigh need to be fixed so that the float: left will not be blocked by some long product blocks*/
   width: 170px !important;
   margin-right: 15px !important;
   display: inline-block !important;
   float: left !important;
-  /*border: 1px solid;*/
+
 }
-ul.products li.product.type-product.last{
+ul.products li.product.type-product.last,
+ul.products li.product.product-category.last{
   margin-right: 15px !important;
 }
 /*grid product layout stop first product of the column from taking a new line*/
-ul.products li.product.type-product.first{
+/*ul.products li.product.type-product.first,*/
+ul.products li.product.product-category.first{
 	clear: none !important;
 }
+/* clear: both the very first product after category to change it to a new line.
+A clever way of selecting first class of emlement. Two parts needed: part 1 select all
+element of class to desired value then part 2 take off all other elements except for the
+first one.
+https://philna.sh/blog/2018/03/18/css-first-of-class/
+*/
+ul.products li.product.type-product{
+  clear: both !important;
+}
+ul.products li.product.type-product ~ li.product.type-product{
+clear: none !important;
+}
+/*****/
+li.product.type-product{
+margin-bottom:1em !important;
+}
 
+li.product.type-product span.price{
+
+  width: 160px;
+  position: absolute;
+  bottom: 50px;
+  right:5px;
+  font-size: 1em;
+
+}
+
+a.button.product_type_grouped, a.button.add_to_cart_button{
+/*display:none; */
+  padding-top:3px !important;
+
+  height: 30px;
+  width: 160px;
+  position: absolute;
+  bottom: 30px;
+  right:5px;
+
+}
+
+a.added_to_cart{
+  padding-top:3px !important;
+
+  height: 30px;
+  width: 160px;
+position: absolute;
+  bottom: 0px;
+  right:5px;
+}
+
+td.label img{
+  max-width: 100px;
+}
 /* temperary used for seperating subcategories and products. later withdrawn.
 .category-separator {display: block;
 width:100%;
@@ -45,7 +113,8 @@ overflow: hidden;
 height:0;
 border:1px solid #000;
 margin-bottom: 2.992em;
-}*/
+}
+*/
 /********/
 /*hide product metadata i.e. sku (.sku_wrapper) tags (tagged_as) category .posted_in wpm_gtin_code_wrapper etc
 .single-product div.product .product_meta .posted_in, .single-product div.product .product_meta .sku_wrapper, .single-product div.product .product_meta .tagged_as {
@@ -61,18 +130,19 @@ margin-bottom: 2.992em;
 /**Meta slider plugin postioning */
 .storefront-breadcrumb{
 	margin-bottom: 0;
-}
-/*div.alignnormal{
-	position:relative;
-	top:-180px;
-	margin-bottom:-0px;
-}*/
+  /*own sticky header css related change,
+comment out this margin-top if stop using own stick and start to use stick plugin*/
+  margin-top:110px;
 
-.home .entry-content{
+}
+
+
+/* comment this out when using own sticky header css. Restore if start to use sticky header plugin*/
+/*.home .entry-content{
 	position:relative;
 	top:-180px;
 	margin-bottom:-170px;
-}
+}*/
 
 .homepageslider{
 	padding-bottom:10px !important;
@@ -83,8 +153,9 @@ margin-bottom: 2.992em;
 
 	padding-left:10px;
 	position:relative;
-	bottom:10px;
-	left:10px
+	bottom: 10px;
+	left:10px;
+
 }
 .content-area{
 	margin-bottom:0px;
@@ -105,7 +176,7 @@ h3.home-h3{
 	padding-left:2%;
 	padding-top:10px;
 
-		border:1px solid #d5d5d5;
+	border:1px solid #d5d5d5;
 	border-bottom-width: 0;
 
 }
@@ -170,6 +241,7 @@ div.ml-slider-3-12-1{
 	padding-right:2%;
 }
 
+
 /*Make Your Account menu smaller*/
 #mega-menu-wrap-primary #mega-menu-primary li#mega-menu-item-947:last-child{
 	margin-left:20px;
@@ -217,6 +289,16 @@ div.ml-slider-3-12-1{
 /********/
 
 /*without powerback*/
+/*berocket filter*/
+/*check box label indentation*/
+div.berocket_single_filter_widget input[type="checkbox"]{
+float:left;
+}
+.berocket_aapf_widget label.berocket_label_widgets{
+display: block;
+margin-left: 18px;
+
+}
 /*price filter slider bar*/
 .berocket_filter_slider.ui-widget-content .ui-slider-range, .berocket_filter_price_slider.ui-widget-content .ui-slider-range {
     background: none repeat scroll 0 0 #84c20e !important;
@@ -253,16 +335,17 @@ div.ml-slider-3-12-1{
 }
 
 .site-search {
-	position:relative;
-	bottom:75px;
+	position:absolute;
+	top:35px;
 	width:100% !important;
+  /*height need be 0 so that the brand home link will be be overlayed*/
 	height:0;
 	margin-bottom:0;
 }
 
 .dgwt-wcas-search-wrapp{
 
-		border:solid;
+	border:solid;
 	border-width:2px;
 	border-color:#84c20e;
 	border-radius:25px;
@@ -307,13 +390,10 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 
 }
 
-li.product.type-product{
-margin-bottom:1em !important;
-}
 
-a.button.product_type_grouped{
-display:none;
-}
+
+
+
 /*
  * malinky Load More button
  */
@@ -340,16 +420,12 @@ display:none;
 
 
 /*without powerback end*/
-@media (min-width: 768px){
-	/*.page-template-template-fullwidth-php .site-main ul.products.columns-6 li.product{
-			width:16.15%;
-	margin-right:0.5%;
-	}*/
+
   .archive #primary{
 	width: 85%;
 	}
 
-}
+
 
 @media (max-width: 1800px){
    .archive #primary{
@@ -372,12 +448,98 @@ display:none;
 	width: 65%;
 	}
 }
-@media (max-width: 760px){
+@media (max-width: 768px){
+  .archive #primary{
+	width: 60%;
+    float: right;
+	}
+  .archive #secondary{
+    width:200px;
+  float: left;
+  }
+
+
+}
+@media (max-width: 630px){
+    .archive #primary{
+width: 65%;
+
+	}
+  .archive #secondary{
+    width:180px;
+  float: left;
+  }
+}
+@media (max-width: 580px){
+ ul.products li.product.product-category,
+  ul.products li.product.product-category.last,
+  ul.products li.product.type-product,
+  ul.products li.product.type-product.last{
+    width: 160px !important;
+  margin-right: 10px !important;
+  }
+}
+@media (max-width: 541px){
+ ul.products li.product.product-category,
+  ul.products li.product.product-category.last,
+  ul.products li.product.type-product,
+  ul.products li.product.type-product.last{
+
+  margin-right: 5px !important;
+  }
+  .archive #primary{
+
+    width:66%;
+  }
+  .archive #secondary{
+
+  	width: 170px;
+  }
+}
+
+@media (max-width: 525px){
+  .archive #primary{
+
+    width:67%;
+  }
+  .archive #secondary{
+
+  	width: 160px;
+  }
+}
+@media (max-width: 510px){
+  ul.products{
+
+    width:360px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  ul.products li.product.product-category,
+  ul.products li.product.product-category.last,
+  ul.products li.product.type-product,
+  ul.products li.product.type-product.last{
+
+    width: 170px !important;
+  	margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+
   .archive #primary{
 	width: 100%;
+
 	}
-  #secondary{
-  	width:100%
+  .archive #secondary{
+	width: 100%;
+  }
+  /*own stick header css realted change to show the slider on home page, remove this when stop using own sticky and use sticky plugin*/
+  .home .entry-content{
+  margin-top:70px;
+  }
+}
+/*for very small screen show single column, this is very unlikely to happen for device screen nowadays*/
+@media (max-width: 359px){
+  	ul.products{
+    width:180px;
   }
 }
 @media (min-width: 2000px){
@@ -421,9 +583,6 @@ display:none;
 		max-width:150px;
 	}
 	.site-search {
-
-	position:relative;
-	bottom:75px;
 	right:250px;
 	width:50% !important;
 	height:0;
@@ -434,8 +593,15 @@ display:none;
 	ul.products li.product .woocommerce-loop-product__title, ul.products li.product h2{
 		font-size:0.8em;
 	}
-}
 
+  }
+/*own sticky header css related change,
+restore to margin-top: 30px if stop using own stick and start to use stick plugin*/
+@media only screen and (max-width: 1130px) {
+  .storefront-breadcrumb{
+  	margin-top: 145px;/*need at least 30px without sticky header to show the samll navigation links when menue become double line*/
+  }
+}
 @media only screen and (max-width: 1000px) {
 	.custom-logo{
 		width:200px;
@@ -450,8 +616,7 @@ display:none;
 
 	/*without powerback*/
 	.site-search {
-	position:relative;
-	bottom:70px;
+
 	right:200px;
 	width:45% !important;
 	height:0;
@@ -462,7 +627,7 @@ display:none;
 
 /*without powerback*/
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
 
 	.mob-standard-logo{
 		width:130px;
@@ -472,6 +637,11 @@ display:none;
 		padding-left:0.5%;
 		padding-right:0.5%;
 }
+    .storefront-breadcrumb{
+  	  margin-top: 0px !important;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
 	/*meta slider plugin css*/
 /*div.ml-slider-3-12-1.metaslider.metaslider-flex.metaslider-1279.ml-slider.ms-theme-cubic.has-dots-nav.ms-loaded.ms-is-small{
 	padding-bottom:10px;
@@ -508,9 +678,7 @@ display:none;
 	.dgwt-wcas-search-wrapp{
 		height:50px;
 	}
-	.storefront-full-width-content .site-main li.product {
-		width:100%;
-
+	 li.product {
 		border-bottom-width:thin;
 		border-bottom-color:#eaeded;
 		border-bottom-style:dashed;
@@ -533,6 +701,9 @@ display:none;
   becomes very small
   */
 
+
+
+
 /*to show the group option thumbnail when screen size becomes small*/
   .group_table td.label {
   padding:0;
@@ -548,4 +719,7 @@ display:none;
   td.woocommerce-grouped-product-list-item__quantity input.input-text.qty.text{
   max-width: 46px;
   }
+  td.label img{
+  max-width: 60px;
+}
 }
