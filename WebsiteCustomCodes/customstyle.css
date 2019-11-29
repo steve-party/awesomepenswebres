@@ -349,7 +349,6 @@ margin-left: 18px;
 	border-width:2px;
 	border-color:#84c20e;
 	border-radius:25px;
-
 }
 
 .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input{
@@ -367,21 +366,24 @@ margin-left: 18px;
 }
 
 .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input:focus{
-
 	border-radius:25px;
 	background-color:#ffffff !important;
-
-
 }
+
+/*Header mini shopping cat related*/
 .site-header-cart {
 	position:absolute;
 	top:30px;
 	right: 50px;
-	max-width:300px;
-
-
-
+  	max-width: 400px;
 }
+
+/*mini cat content fixed size*/
+.site-header-cart .widget_shopping_cart{
+  width: 400px;
+  margin-left:-200px;
+}
+/*mini cat title smaller*/
 ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 	height:30px;
 	max-width:150px;
@@ -389,10 +391,6 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 	margin-left:50px
 
 }
-
-
-
-
 
 /*
  * malinky Load More button
