@@ -14,12 +14,6 @@
 
 }
 
-#secondary{
-width:250px;
-  margin-right:5px;
-}
-
-
 ul.products li.product.type-product h2.woocommerce-loop-product__title{
 font-size: 0.9em;
   text-align: left;
@@ -419,144 +413,40 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 
 /*without powerback end*/
 
-  .archive #primary{
-	width: 85%;
-	}
 
+#secondary{
+	width:15%;
+  margin-right:0;
+  padding-right: 10px;
+}
 
-
-@media (max-width: 1800px){
-   .archive #primary{
-	width: 80%;
-	}
+.archive #primary{
+  width: 85%;
 
 }
-@media (max-width: 1300px){
-  .archive #primary{
-	width: 75%;
-	}
-}
-@media (max-width: 1050px){
-  .archive #primary{
-	width: 70%;
-	}
-}
-@media (max-width: 870px){
-  .archive #primary{
-	width: 65%;
-	}
-}
-@media (max-width: 768px){
-  .archive #primary{
-	width: 60%;
-    float: right;
-	}
-  .archive #secondary{
-    width:200px;
-  float: left;
-  }
 
 
-}
-@media (max-width: 630px){
-    .archive #primary{
-width: 65%;
 
-	}
-  .archive #secondary{
-    width:180px;
-  float: left;
-  }
-}
-@media (max-width: 580px){
- ul.products li.product.product-category,
-  ul.products li.product.product-category.last,
-  ul.products li.product.type-product,
-  ul.products li.product.type-product.last{
-    width: 160px !important;
-  margin-right: 10px !important;
-  }
-}
-@media (max-width: 541px){
- ul.products li.product.product-category,
-  ul.products li.product.product-category.last,
-  ul.products li.product.type-product,
-  ul.products li.product.type-product.last{
+@media only screen and (min-width: 2000px){
 
-  margin-right: 5px !important;
+  #secondary{
+	width:12%;
+}
+.archive #primary{
+width:88%
+}
+
+}
+
+@media only screen and (max-width: 1500px) {
+    #secondary{
+	width:20%;
   }
   .archive #primary{
-
-    width:66%;
-  }
-  .archive #secondary{
-
-  	width: 170px;
+  width:80%
   }
 }
 
-@media (max-width: 525px){
-  .archive #primary{
-
-    width:67%;
-  }
-  .archive #secondary{
-
-  	width: 160px;
-  }
-}
-@media (max-width: 510px){
-  ul.products{
-
-    width:360px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  ul.products li.product.product-category,
-  ul.products li.product.product-category.last,
-  ul.products li.product.type-product,
-  ul.products li.product.type-product.last{
-
-    width: 170px !important;
-  	margin-right: 5px !important;
-    margin-left: 5px !important;
-  }
-
-  .archive #primary{
-	width: 100%;
-
-	}
-  .archive #secondary{
-	width: 100%;
-  }
-  /*own stick header css realted change to show the slider on home page, remove this when stop using own sticky and use sticky plugin*/
-  .home .entry-content{
-  margin-top:70px;
-  }
-}
-/*for very small screen show single column, this is very unlikely to happen for device screen nowadays*/
-@media (max-width: 359px){
-  	ul.products{
-    width:180px;
-  }
-}
-@media (min-width: 2000px){
-		.site-header {
-
-		margin-left:auto;
-		margin-right:auto;
-	}
-
-	.site-footer {
-
-		margin-left:auto;
-		margin-right:auto;
-	}
-	.col-full{
-			max-width:95%;
-	}
-
-}
 @media only screen and (max-width: 1300px) {
 	.site-header {
 		max-width:100%;
@@ -621,13 +511,43 @@ restore to margin-top: 30px if stop using own stick and start to use stick plugi
 	margin-bottom:0;
 	}
 	/*without powerback end*/
+    #secondary{
+
+    }
+    .archive #primary{
+
+    }
 }
 
 /*without powerback*/
-
+@media only screen and (max-width: 820px) {
+      #secondary{
+      width: 28%;
+  }
+  .archive #primary{
+    width: 72%;
+  }
+   ul.products li.product.product-category,
+  ul.products li.product.product-category.last,
+  ul.products li.product.type-product,
+  ul.products li.product.type-product.last{
+	width: 160px;
+  margin-right: 5px !important;
+  }
+}
 @media only screen and (max-width: 768px) {
+    #secondary{
+      width: 30%;
+	float:left;
+      padding-left: 5px;
+  }
+  .archive #primary{
+    width: 70%;
+  float:right;
+  }
 
-	.mob-standard-logo{
+
+  .mob-standard-logo{
 		width:130px;
 	}
 
@@ -720,4 +640,50 @@ restore to margin-top: 30px if stop using own stick and start to use stick plugi
   td.label img{
   max-width: 60px;
 }
+}
+@media (max-width: 515px){
+    .archive #primary{
+	width: 72%;
+
+	}
+  .archive #secondary{
+	width: 28%;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  ul.products{
+
+    width:360px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  ul.products li.product.product-category,
+  ul.products li.product.product-category.last,
+  ul.products li.product.type-product,
+  ul.products li.product.type-product.last{
+
+    width: 170px !important;
+  	margin-right: 5px !important;
+    margin-left: 5px !important;
+  }
+
+  .archive #primary{
+	width: 100%;
+
+	}
+  .archive #secondary{
+	width: 100%;
+  }
+  /*own stick header css realted change to show the slider on home page, remove this when stop using own sticky and use sticky plugin*/
+  .home .entry-content{
+  margin-top:70px;
+  }
+}
+
+/*for very small screen show single column, this is very unlikely to happen for device screen nowadays*/
+@media only screen and  (max-width: 359px){
+  	ul.products{
+    width:180px;
+  }
 }
