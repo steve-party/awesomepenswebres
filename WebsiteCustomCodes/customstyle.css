@@ -75,7 +75,9 @@ li.product.type-product span.price{
 
 }
 
-a.button.product_type_grouped, a.button.add_to_cart_button{
+a.button.product_type_grouped,
+a.product_type_simple,
+a.button.add_to_cart_button{
 /*display:none; */
   padding-top:3px !important;
 
@@ -86,6 +88,7 @@ a.button.product_type_grouped, a.button.add_to_cart_button{
   right:5px;
 
 }
+
 
 a.added_to_cart{
   padding-top:3px !important;
