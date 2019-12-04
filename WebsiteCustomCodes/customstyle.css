@@ -488,7 +488,7 @@ width:88%
   }
 /*own sticky header css related change,
 restore to margin-top: 30px if stop using own stick and start to use stick plugin*/
-@media only screen and (max-width: 1130px) {
+@media only screen and (max-width: 1255px) {
   .storefront-breadcrumb{
   	margin-top: 145px;/*need at least 30px without sticky header to show the samll navigation links when menue become double line*/
   }
