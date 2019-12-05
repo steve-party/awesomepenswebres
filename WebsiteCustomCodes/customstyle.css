@@ -99,10 +99,18 @@ position: absolute;
   bottom: 0px;
   right:5px;
 }
-
+/*Group product thumnail image width*/
 td.label img{
   max-width: 100px;
+
 }
+
+table.woocommerce-product-attributes.shop_attributes
+th.woocommerce-product-attributes-item__label{
+ width: 40%;
+
+}
+
 /* temperary used for seperating subcategories and products. later withdrawn.
 .category-separator {display: block;
 width:100%;
@@ -431,6 +439,10 @@ ul.site-header-cart li:not(.woocommerce-mini-cart-item){
 
 
 @media only screen and (min-width: 2000px){
+  .home .site-content .col-full,
+  .home .site-footer .col-full{
+   max-width: 2200px;
+  }
 
   #secondary{
 	width:12%;
@@ -442,7 +454,9 @@ width:88%
 }
 
 @media only screen and (max-width: 1500px) {
-    #secondary{
+
+
+  #secondary{
 	width:20%;
   }
   .archive #primary{
