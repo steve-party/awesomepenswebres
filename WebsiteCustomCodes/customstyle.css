@@ -17,6 +17,9 @@
 ul.products li.product.type-product h2.woocommerce-loop-product__title{
 font-size: 0.9em;
   text-align: left;
+  /* we found using posistion on the price and add to cat button cost trouble of the Ajax filter plugin to preform slowly in Safari browser.
+  Hence we used another way ie. to fixed the heigh of the <h2> above (which is this one) to work around this issue.*/
+  height: 70px;
 }
 
 ul.products li.product.product-category{
@@ -60,20 +63,25 @@ ul.products li.product.type-product ~ li.product.type-product{
 clear: none !important;
 }
 /*****/
+
 li.product.type-product,
 li.product.product-category{
 margin-bottom:1em !important;
-}
 
+}
+/*8888*/
 li.product.type-product span.price{
 
   width: 160px;
+  /* we found using posistion here cost trouble of the Ajax filter plugin to preform slowly in Safari browser.
+  Hence we used another way ie. to fixed the heigh of the <h2> above work around this issue.
   position: absolute;
   bottom: 50px;
-  right:5px;
+  right:5px;*/
   font-size: 1em;
 
 }
+
 
 a.button.product_type_grouped,
 a.product_type_simple,
@@ -83,13 +91,16 @@ a.button.add_to_cart_button{
 
   height: 30px;
   width: 160px;
+ /* we found using posistion here cost trouble of the Ajax filter plugin to preform slowly in Safari browser.
+  Hence we used another way ie. to fixed the heigh of the <h2> above work around this issue.
   position: absolute;
   bottom: 30px;
-  right:5px;
+  right:5px;*/
+
 
 }
 
-
+/****7777*/
 a.added_to_cart{
   padding-top:3px !important;
 
