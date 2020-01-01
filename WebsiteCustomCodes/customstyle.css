@@ -66,7 +66,7 @@ clear: none !important;
 
 li.product.type-product,
 li.product.product-category{
-margin-bottom:1em !important;
+margin-bottom:2em !important;
 
 }
 /*8888*/
@@ -102,13 +102,11 @@ a.button.add_to_cart_button{
 
 /****7777*/
 a.added_to_cart{
+/*display:none; */
   padding-top:3px !important;
 
   height: 30px;
   width: 160px;
-position: absolute;
-  bottom: 0px;
-  right:5px;
 }
 /*Group product thumnail image width*/
 td.label img{
@@ -549,7 +547,10 @@ restore to margin-top: 30px if stop using own stick and start to use stick plugi
 
 /*without powerback*/
 @media only screen and (max-width: 820px) {
-      #secondary{
+  .site-search {
+  width: 42% !important;
+  }
+  #secondary{
       width: 28%;
   }
   .archive #primary{
@@ -563,7 +564,7 @@ restore to margin-top: 30px if stop using own stick and start to use stick plugi
   margin-right: 5px !important;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     #secondary{
       width: 30%;
 	float:left;
